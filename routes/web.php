@@ -33,8 +33,16 @@ Route::get('r2', function(){
     return view('welcome');
 });
 */
-/* */
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+
+//練習 2：設定 Route 接收參數
+/*1. 修改 Route 接受參數*/
+Route::get('hello/{name}',function($name){
+    return'Hello,'.$name;
+});
+
 

@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//練習 1：設定 Route 反應
+/*1. 設定 Route 回傳字串*/
+Route::get('/',function(){
+    return'welcome';
+});
+
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/

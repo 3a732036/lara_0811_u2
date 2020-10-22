@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//練習 1：設定 Route 反應
+//  練習 1：設定 Route 反應
 /*1. 設定 Route 回傳字串
 Route::get('/',function(){
     return'welcome';
@@ -33,22 +33,30 @@ Route::get('r2', function(){
     return view('welcome');
 });
 */
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
 
-//練習 2：設定 Route 接收參數
+
+//  練習 2：設定 Route 接收參數
 /*1. 修改 Route 接受參數
 Route::get('hello/{name}',function($name){
     return 'Hello,'.$name;
 });
 */
 
-/*3. 修改參數成選擇性*/
+/*3. 修改參數成選擇性
 Route::get('hello/{name?}',function($name='Everybody'){
     return 'Hello,'.$name;
+});
+*/
+
+//  練習 4：為 Route 命名
+/*1. */
+Route::get('hello/{name?}', function ($name='Everybody') {
+    return 'Hello, '.$name;
+})->name('hello.index');
+
+/**/
+Route::get('/', function () {
+    return view('welcome');
 });
 
 

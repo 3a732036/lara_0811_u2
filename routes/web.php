@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,13 +65,18 @@ Route::get('dashboard',function(){
 /*2. 設定另一個 Route 以群組包起來設定 prefix*/
 Route::group(['prefix'=>'admin'],function(){
     Route::get('dashboard',function(){
-        return'admindashboard';
+        return 'admin dashboard';
     });
 });
-/**/
 
-Route::get('/', function () {
+
+Route::get('/', [HomeController::class, 'index']);
+
+/*
+ * Route::get('/', function () {
     return view('welcome');
 });
+*/
+
 
 

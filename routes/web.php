@@ -72,6 +72,9 @@ Route::group(['prefix'=>'admin'],function(){
 
 Route::get('/', [HomeController::class, 'index']);
 
+Route::get('hello/{name?}', function ($name='Everybody') {
+    return 'Hello, '.$name;
+})->name('hello.index');
 /*
  * Route::get('/', function () {
     return view('welcome');
